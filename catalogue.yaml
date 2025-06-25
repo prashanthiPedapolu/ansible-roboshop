@@ -1,6 +1,5 @@
 - name: configuring catalogue server
   hosts: catalogue
-  connection: ssh
   become: yes
   tasks: 
   - name: disable default nodejs
@@ -26,7 +25,7 @@
 
   - name: download catalogue code
     ansible.builtin.get_url:
-      url: curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
+      url: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
       dest: /tmp/catalogue.zip
   - name: extract code
     ansible.builtin.unarchive:
