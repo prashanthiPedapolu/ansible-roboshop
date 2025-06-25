@@ -1,6 +1,6 @@
 - name: configuring catalogue server
   hosts: catalogue
-  connecton: 172.31.17.198
+  connection: ssh
   become: yes
   tasks: 
   - name: disable default nodejs
