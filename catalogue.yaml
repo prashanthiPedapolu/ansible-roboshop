@@ -48,5 +48,18 @@
        name: catalogue
        state: started
        enabled: yes
+  - name: copy mongodb repo
+    ansible.builtin.copy:
+      src: mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo
+  - name: install mongodb clinet
+    ansible.builtin.dnf:
+      name: mongodb-mongosh
+      state: present
 
+  - name: loading data into mongodb
+    community.mongodb.mongodb_shell:
+      file: "/app/db/master-data.js"
+      idempotent: yes
+      login_host: 172.31.29.28
 
