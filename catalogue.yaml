@@ -62,4 +62,7 @@
       file: "/app/db/master-data.js"
       idempotent: yes
       login_host: 172.31.29.28
+  - name: check if products are loaded
+    ansible.builtin.command: mongosh --host mongodb.daws84s.site --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
+     register: catalogue_output
 
