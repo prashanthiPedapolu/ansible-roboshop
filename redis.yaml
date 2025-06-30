@@ -1,6 +1,6 @@
 
 - name: install redis component
-  hosts: redis
+  hosts: redis.mylearnings.site
   become: yes
   tasks:
   - name: disable redis default module
