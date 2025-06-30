@@ -41,7 +41,7 @@
       path: /app
 
   - name: copy systemd service file
-    ansibile.builtin.copy:
+    ansible.builtin.copy:
       src: cart.service
       dest: /etc/systemd/system/cart.service
 
