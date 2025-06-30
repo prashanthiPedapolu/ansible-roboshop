@@ -22,8 +22,8 @@
       home: /app
   - name: download user code
     ansible.builtin.get_url:
-      url: https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip 
-      dest: /tmp/user.zip
+    url: https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip 
+    dest: /tmp/user.zip
   - name: extract user code
     ansible.builtin.unarchieve:
       src: /tmp/user.zip
